@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing Game</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sono&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #04081c;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        flex-direction: column;
+        font-family: 'Sono', sans-serif;
+      }
+      .con {
+        width: 500px;
+        border-radius: 5px;
+        /* border: 1px solid red; */
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        padding: 20px;
+        background: linear-gradient(to right, #4776E6  , #8E54E9 100%);
+
+      }
+      .heading {
+        margin: 20px;
+        align-items: center;
+      }
+
+      .con input{
+        margin: 20px 0px;
+        width: 180px;
+        height: 30px;
+
+        font-family: 'Sono', sans-serif;
+        padding: 5px;
+        text-align: center;
+        border-radius: 3px;
+        border: none;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .con input:focus {
+        border: none;
+      }
+
+      .con button{
+        width: 100px;
+        height: 33px;
+        text-align: center;
+        border-radius: 3px;
+        color: white;
+        border: none;
+        margin: 15px 0px;
+        background-color: rgb(5 17 38);
+        align-self: flex-end;
+        font-family: 'Sono', sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        font-weight: bold;
+
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="heading">
+      <h1>Number Guessing Game</h1>
+    </div>
+    <div class="con">
+      <div class="para">
+        <h3>I'm imagine a number between 1-100.</h3>
+        <h3>Can you guess this number?</h3>
+      </div>
+      <div><form>
+        <input type="number" id="num" placeholder="Enter the number">
+      </form>
+      </div>
+      <div>
+        <!-- <input type="button" value="Guess"> -->
+        <button id="btn"  onclick="check()">Guess
+        </button>
+      </div>
+      <div id="result">
+
+      </div>
+    </div>
+    <footer>
+      <p style="font-weight: 100;">Design and made by Chaitanya Lonarkar</ps>
+    </footer>
+  </body>
+  <script>
+
+//     window.onclick=start
+//     function start(){
+//     var count =5
+//     var random=Number.parseInt(Math.random(100)*100)
+//     console.log(random)
+
+//     document.getElementById('btn').addEventListener('onclick',CheckNum())
+//     function CheckNum(){
+//       while(count!=0){
+//       let num1=document.getElementById('num').value;
+//       let num=Number.parseInt(num1);
+
+//       // console.log(num)
+//       if(num==random){
+//         document.getElementById('result').innerHTML=("You Guess the right no. and you win this game...!")
+        
+//       }else if(num<random){
+//         document.getElementById('result').innerHTML=("Guessed number is too low..")   
+//         }
+//       else{
+//         document.getElementById('result').innerHTML=("Guessed number is too high..")   
+//         }
+//       --count
+//     }
+//     document.getElementById('result').innerHTML=("Your chances are over..!\nYou lose the gaame....!")   
+//   }
+// }
+// window.onclick=start
+    // function start(){
+    var count =5
+    var random=Number.parseInt(Math.random(100)*100)
+    
+    function check(){
+    var num1=document.getElementById('num').value;
+    var num=Number.parseInt(num1);
+
+    // console.log(num)
+
+    //   console.log(random)
+    if(num>=1 && num<=100){
+        if(num==random){
+          document.getElementById('result').innerHTML=("You Guess the right no. and you win this game...!")
+        }
+        else if(num<random){
+          document.getElementById('result').innerHTML=("Guessed number is too low..")   
+
+        }
+        else{
+          document.getElementById('result').innerHTML=("Guessed number is too high..")   
+
+        }
+        document.getElementById('num').value=""
+      }
+      else{
+        document.getElementById('result').innerHTML=("Enter number betweem 1-100 only..")   
+
+      }
+    }
+    // }s
+
+      </script>
+    </html>
+    
